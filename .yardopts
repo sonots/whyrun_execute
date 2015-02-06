@@ -1,0 +1,5 @@
+--readme README.md
+libraries/**/*.rb
+definitions/**/*.rb
+providers/**/*.rb
+resources/**/*.rb
