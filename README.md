@@ -33,13 +33,10 @@ cookbook 'whyrun_safe_execute', git: "https://github.com/sonots/chef-resource-wh
 
 # Usage
 
-See http://sonots.github.io/chef-resource-whyrun_safe_execute/doc/frames.html.
-
-# Example
-
-recipes/test.rb
+Example: 
 
 ```ruby
+# recipes/test.rb
 whyrun_safe_execute "foo" do
   command "ls /tmp"
 end
@@ -48,3 +45,7 @@ end
 ```
 $ chef-solo -c solo.rb -o {cookbook}::test -W -l info
 ```
+
+# Options
+
+Options are same with `execute` resource. See http://docs.chef.io/resource_execute.html
