@@ -1,6 +1,6 @@
-# whyrun_execute Cookbook
+# whyrun_safe_execute Cookbook
 
-Add `whyrun_execute` resource which runs command only on why-run mode for chef
+Add `whyrun_safe_execute` resource which enables to run command on why-run mode for chef 
 
 # Installation
 
@@ -9,7 +9,7 @@ Add `whyrun_execute` resource which runs command only on why-run mode for chef
 For cookbook, write metadata.rb as:
 
 ```ruby
-depends 'whyrun_execute'
+depends 'whyrun_safe_execute'
 ```
 
 and Berksfile:
@@ -18,7 +18,7 @@ and Berksfile:
 source 'https://supermarket.chef.io'
 
 metadata
-cookbook 'whyrun_execute', git: "https://github.com/sonots/whyrun_execute.git"
+cookbook 'whyrun_safe_execute', git: "https://github.com/sonots/chef-resource-whyrun_safe_execute.git"
 ```
 
 ## For Chef Repository
@@ -28,26 +28,23 @@ For chef-repo, write Berksfile as:
 ```ruby
 source 'https://supermarket.chef.io'
 
-cookbook 'whyrun_execute', git: "https://github.com/sonots/whyrun_execute.git"
+cookbook 'whyrun_safe_execute', git: "https://github.com/sonots/chef-resource-whyrun_safe_execute.git"
 ```
 
 # Usage
 
-See http://sonots.github.io/whyrun_execute/doc/frames.html.
+See http://sonots.github.io/chef-resource-whyrun_safe_execute/doc/frames.html.
 
 # Example
 
 recipes/test.rb
 
 ```ruby
-whyrun_execute "foo" do
+whyrun_safe_execute "foo" do
   command "ls /tmp"
 end
 ```
 
 ```
-$ chef-solo -c solo.rb -o {cookbook}::test -l info
-#=> does not run
 $ chef-solo -c solo.rb -o {cookbook}::test -W -l info
-#=> does run
 ```

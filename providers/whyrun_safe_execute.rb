@@ -2,12 +2,10 @@ require 'chef/provider/execute'
 
 class ::Chef
   class Provider
-    class WhyrunExecute < Execute
-      provides :whyrun_execute
+    class WhyrunSafeExecute < Execute
+      provides :whyrun_safe_execute
 
       def action_run
-        return false unless Chef::Config[:why_run] # execute only on why-run
-
         puts
         puts "    - \e[#{32}mexecute #{@new_resource.command}\e[0m"
         result = shell_out!(@new_resource.command, opts)
