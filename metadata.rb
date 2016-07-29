@@ -1,4 +1,4 @@
-name             '-whyrun_safe_execute'
+name             'whyrun_safe_execute'
 maintainer       'sonots'
 maintainer_email 'sonots@gmail.com'
 license          'All rights reserved'
